@@ -1,0 +1,114 @@
+.valentine-container {
+  position: relative;
+  background-image: url("public/background.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+/* Pink tint overlay */
+.valentine-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 210, 215, 0.7); /* Light pink with 50% opacity */
+  z-index: 1;
+}
+
+/* Content inside the container */
+.valentine-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  filter: drop-shadow(0 0 4em #ffffffcc);
+}
+
+/* Custom class for Yes button styles */
+.yes-button {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #1faa3f; /* bg-green-500 */
+  color: #fff; /* text-white */
+  font-weight: bold; /* font-bold */
+  padding: 10px 20px; /* py-2 px-4 */
+  border-radius: 8px; /* rounded */
+  margin-right: 8px; /* mr-4 */
+}
+
+.yes-button:hover {
+  background-color: #0e6721; /* hover:bg-green-700 */
+}
+
+/* Custom class for No button styles */
+.no-button {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #c90d0d; /* bg-red-500 */
+  color: #fff; /* text-white */
+  font-weight: bold; /* font-bold */
+  padding: 10px 20px; /* py-2 px-4 */
+  border-radius: 8px; /* rounded */
+}
+
+.no-button:hover {
+  background-color: #920c1a; /* hover:bg-red-700 */
+}
+/* Custom class for text-4xl my-4 container */
+.text-container {
+  font-family: "Lucida Handwriting", cursive;
+  font-weight: bold;
+  font-size: 2.25rem; /* Equivalent to text-4xl in tailwindcss */
+  margin-top: 1rem; /* Equivalent to my-4 in tailwindcss */
+  margin-bottom: 1rem; /* Equivalent to my-4 in tailwindcss */
+}
+
+.centered-container {
+  display: flex;
+  font-size: large;
+  font-family: "Times New Roman", Times, serif;
+  flex-direction: column;
+  align-items: right;
+  justify-content: right;
+  height: 100vh;
+  margin: 0;
+}
+
+.heart {
+  animation: floatAwayWobble 3s forwards;
+  pointer-events: none;
+  font-size: 36px; /* Hearts slightly bigger */
+}
+
+@keyframes floatAwayWobble {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  20% {
+    transform: translate(5px, -20px) scale(1.1) rotate(15deg);
+  }
+  40% {
+    transform: translate(10px, -40px) scale(1.1) rotate(-15deg);
+  }
+  60% {
+    transform: translate(15px, -60px) scale(1.1) rotate(15deg);
+  }
+  80% {
+    transform: translate(18px, -80px) scale(0.9) rotate(-15deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(20px, -110px) scale(0.5) rotate(0deg); /* Ensures it ends up fading away while scaled down */
+  }
+}
